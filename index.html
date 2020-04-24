@@ -11,6 +11,32 @@
     <title>Pinpoint Weather</title>
 </head>
 <body>
+    <div class="container my-5 mx-auto">
+
+        <h1 class="text-muted text-center my-4"> Pinpoint Weather </h1>
+    
+        <form class="change-location my-4 text-center text-muted">
+          <label for="city">Enter Location For Weather Information</label>
+          <input type="text" name="city" class="form-control p-4">
+        </form>
+        
+        <div class="card shadow-lg rounded">
+            <!--From Placeholder Website-->
+          <img src="https://via.placeholder.com/400x300" class="time card-img-top">
+          <div class="icon bg-light mx-auto text-center">
+            <!-- icon here later -->
+          </div>
+          <div class="text-muted text-uppercase text-center details">
+            <h5 class="my-3">City Name</h5>
+            <div class="my-3">Weather Condition</div>
+            <div class="display-4 my-4">
+              <span>Temp</span>
+              <span>&deg;C</span>
+            </div>
+          </div>
+        </div>
+        
+      </div> 
 
     <!--JS Link-->
     <script src="scripts/forecast.js" type="text/javascript"></script>
