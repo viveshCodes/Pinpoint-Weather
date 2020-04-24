@@ -1,5 +1,26 @@
 const cityForm = document.querySelector('form');
+const card = document.querySelector('.card');
+const details = document.querySelector('.details');
 
+/*update UI after fetching data
+________________________________*/
+const updateUI = (data) =>{
+    const cityDetails = data.cityDetails;
+    const weather = data.weather;
+
+    // update details templates
+    details.innerHTML = `
+    <h5 class="my-3">${cityDetails.EnglishName}</h5>
+    <div class="my-3">${weather.WeatherText}</div>
+    <div class="display-4 my-4">
+        <span>${weather.Temperature.Metric.Value}</span>
+        <span>&deg;C</span>
+    </div>
+    `;
+};
+
+/*update city when user inputs it 
+__________________________________*/
 const updateCity = async (city) =>{
 
     const cityDetails = await getCity(city);
@@ -21,7 +42,7 @@ cityForm.addEventListener('submit', event =>{
 
     // update UI with new city
     updateCity(city)
-        .then(data => console.log(data))
+        .then(data => updateUI(data))
         .catch(err => console.log(err));
 
 });
