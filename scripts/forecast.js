@@ -30,10 +30,3 @@ const getCity = async (city) =>{
     return data[0];
 };
 
-
-getCity('Birganj').then(data => {       // Location API
-    return getWeather(data.Key);
-}).then(data =>{                        // Weather API
-    console.log(data);
-})
-.catch(err => console.log(err));
