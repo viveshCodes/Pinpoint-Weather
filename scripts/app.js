@@ -1,5 +1,19 @@
 const cityForm = document.querySelector('form');
 
+const updateCity = async (city) =>{
+
+    const cityDetails = await getCity(city);
+    const weather = await getWeather(cityDetails.Key);
+
+    return {
+        cityDetails : cityDetails,
+        weather : weather
+    };
+};
+
+
+/*get city name from user
+_________________________*/
 cityForm.addEventListener('submit', event =>{
     // prevent default action
     event.preventDefault();
@@ -9,5 +23,8 @@ cityForm.addEventListener('submit', event =>{
     cityForm.reset();
 
     // update UI with new city
+    updateCity(city)
+        .then(data => console.log(data))
+        .catch(err => console.log(err));
 
 });
