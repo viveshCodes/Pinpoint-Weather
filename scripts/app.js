@@ -5,9 +5,9 @@ const details = document.querySelector('.details');
 /*update UI after fetching data
 ________________________________*/
 const updateUI = (data) =>{
-    const cityDetails = data.cityDetails;
-    const weather = data.weather;
-
+     // destructure data
+     const {cityDetails , weather} = data ;
+     
     // update details templates
     details.innerHTML = `
     <h5 class="my-3">${cityDetails.EnglishName}</h5>
