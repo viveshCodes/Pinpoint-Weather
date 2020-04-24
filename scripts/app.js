@@ -17,6 +17,9 @@ const updateUI = (data) =>{
         <span>&deg;C</span>
     </div>
     `;
+    if(card.classList.contains('d-none')){
+        card.classList.remove('d-none');
+    }
 };
 
 /*update city when user inputs it 
