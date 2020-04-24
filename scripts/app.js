@@ -29,6 +29,10 @@ const updateUI = (data) =>{
     }
     time.setAttribute('src',timeSource);
 
+    //update icon
+    const iconScource = `img/icons/${weather.WeatherIcon}.svg`;
+    icon.setAttribute('src' , iconScource);
+
     // remove d-none class if present
     if(card.classList.contains('d-none')){
         card.classList.remove('d-none');
